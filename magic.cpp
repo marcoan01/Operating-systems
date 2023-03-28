@@ -1,11 +1,4 @@
-/********************************************************************
- *File: pgm1.cpp
- *Author: Marco Delgado
- *Procedures:
-  *main: procedure that creates two processes using fork and pipes to communicate in between those two processes
-  *magics: it will take the nine-digit input and will verify whether it is a magic square 
-  *sysinfo: uses different functions to print the information about the machine
-  *******************************************************************/
+
 #include<cstring>
 #include<unistd.h>
 #include<stdio.h>
@@ -17,13 +10,6 @@
 int magics(int);
 void sysinfo();
 
-/********************************************************************
- *int main()
- *Author: Marco Delgado
- *Date: 17 September 2021
- *Description: Creates two processes using fork. Recieves input from the user, then pipes will be used to communicate between the two processes providing 
- a final statement of whether the input is a magic square or not.
-********************************************************************/
 int main()
 {
   int nu;
@@ -94,14 +80,7 @@ int main()
   
   return 0;
 }
-/************************************************************
- *int magics(int x)
- *Author: Marco Delgado
- *Date: 17 September 2021
- *Description: it will recieve a nine-digit number. Then turn it into a 3x3 matrix and solve to see if it is a magic square or not.
- *Parameters:
-       *x             Represents the nine-digit number from the user
-       *******************************************************/
+
 int magics(int x)
 {
      int a[3][3];    //3x3 matrix for the square
@@ -169,12 +148,7 @@ int magics(int x)
        }                                    //true
      return 2;
  }
-/********************************************************************
- *void sysinfo()
- *Author: Marco Delgado
- *Date: 17 September 2021
- *Description: This procedure just serves as calling other prodecures to print the machine specifications
- ********************************************************************/
+
 void sysinfo()
 {
   char name[100];                     //Hold the buffer from the procedures
