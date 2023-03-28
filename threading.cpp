@@ -1,12 +1,3 @@
-/*******************************************************************
- *File: pgm2.cpp
- *Author: Marco Delgado
- *Procedures:
- *main:     -create threads, execute and terminate them. Also, printing the results
- *philosophers: controls every thread (philosopher)
- *eat: states that the philosopher is eating
- *thinking: states that the philosopher is thinking
- *******************************************************************/
 #include <unistd.h>
 #include <semaphore.h>
 #include <pthread.h>
@@ -26,15 +17,6 @@ int t[5] = {0};        //int array to count the thinking activities
 float ce[5] = {0};     //float array to keep track of the time for eating
 float ct[5] = {0};     //float array to keep track of the time for thinking
 
-/***********************************************************
- *int main(int argc, char *argv[]
- *Author: Marco Delgado
- *Date: 22 October 2021
- *Description: Creates, executes and terminates all the threads. Prints the results
- *Parameters:
- *argc     int      The number of arguments on the command line
- *argv     char*[]  The arguments on the command line
- *************************************************************/
 int main(int argc, char *argv[])
 {
   //variable declaration and initialization
@@ -78,14 +60,6 @@ int main(int argc, char *argv[])
     }
 }
 
-/***********************************************************
- *void * philosopher (void * p)
- *Author: Marco Delgado
- *Date: 22 October 2021
- *Description: function to simulate all the activies from the philosopher
- *Parameters:
- *p      void*     represents the number of the philosopher 
- **********************************************************/
 void * philosopher (void * p)
 {
   int ph =* (int *)p;                     //this int will represent the # for                                           each philosopher 
@@ -124,16 +98,6 @@ void * philosopher (void * p)
   }
   return NULL;
 }
-
-/*******************************************************
- *int eat(int r, float ra)
- *Author: Marco Delgado
- *Date: 22 October 2021
- *Description: print that the philosopher is eating and store the time in the corresponding array
- *parameters
- *r      int      number of the philosopher
- *ra     float    time spent
- *******************************************************/
 int eat (int r, float ra)
 {
   //printing eating statement
@@ -141,15 +105,7 @@ int eat (int r, float ra)
   ce[r] = ce[r] + ra;             //storing the time in the ce[] array
   return e[r] + 1;                //return the sum of the counting of eating
 }
-/********************************************************
- *int think(int s, float sa)
- *Author: Marco Delgado
- *Date: 22 October 2021
- *Description: print that the philosopher is thinking and store the time in the corresponding array
- *parameters
- *s      int        number of the philosopher
- *sa     float      time spent
- ********************************************************/
+
 int think(int s, float sa)
 {
   //printing thinking statement
