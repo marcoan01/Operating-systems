@@ -1,14 +1,3 @@
-/****************************************************
- *File: pgm3.cpp
- *Author: Marco Delgado
- *Procedures:
-   *main: starts the experiments, store the results from the algorithms and print them
-   *LRU:          implementation for the LRU algorithm
-   *FIFO:         implementation for the FIFO algorithm
-   *CLOCK:        implementation for the Clock Algorithm
-   *ClockSearch:  a procedure tool that works as a tool to find certain elements in memory
-   *ClockUpdate:  a procedure tool that works to update elements in memory
-   **************************************************/
 #include<math.h>
 #include<vector>
 #include<bits/stdc++.h>
@@ -21,15 +10,6 @@ int Clock(int, int[]);
 bool ClockSearch(int[], int, int, bool[]);
 int ClockUpdate(int[], int, int, int, bool[]);
 
-/*********************************************
- *int main(int argc, char argv*[]
- *Author: Marco Delgado
- *Date: 19 November 2021
- *Description: main procedure that will store the results from the algorithms and will print the results
- *Parameters
- *   argc    int      Number of arguments on the command line
- *   argv    char*[]  Arguments on the command line
- *********************************************/
 int main(int argc, char *argv[])
 {
  
@@ -70,17 +50,6 @@ int main(int argc, char *argv[])
 	                                              //printed in rows
 	}           
 
-     
-}
-/***********************************************
- *int LRU(int wss, int d[])
- *Author: Marco Delgado
- *Date: 19 November 2021)
- *Description: implementation of the LRU algorithm
- *Parameters
- *  wss     int    working set size
- *  d       int[]  page numbers in our array
- **********************************************/
 int LRU(int wss, int d[])
 {
 
@@ -113,15 +82,7 @@ int LRU(int wss, int d[])
 
   return total;                                   //return total of page fault
 }
-/******************************************
- *int FIFO(int si, int d[])
- *Author: Marco Delgado
- *Date: 19 November 2021
- *Description:  Implementation of the FIFO algorithm
- *Parameters:
- * si       int     working set size 
- * d        int[]   page numbers in our array
- ******************************************/
+
 int FIFO(int si, int d[])
 {
   //to accomplish FIFO we will use a queue and an unordered set
@@ -159,15 +120,7 @@ int FIFO(int si, int d[])
     }
   return total;                           //return total of page faults
 }
-/****************************************
- *int Clock(ints s, int d[])
- *Author: Marco Delgado
- *Date:   19 November 2021
- *Description:  implementation of the Clock algorithm with two other methods
- *Parameters
- * s      int     working set size
- * d      int[]   page numbers in our array
- *****************************************/
+
 int Clock(int s, int d[])
 {
   bool val;                                    //bool val to see if page numbe                                               //r was found 
@@ -191,17 +144,7 @@ int Clock(int s, int d[])
     }
   return total;                                //return total of page faults
 }
-/******************************************** 
- *bool ClockSearch(int ar[], int page, int s, bool tep[])
- *Author: Marco Delgado
- *Date: 19 November 2021
- *Description: this tool will help us determine if the page number already exists in our array (ar[])
- *Parameters:
- * ar      int[]     array that holds some page numbers
- * page    int       the current page being worked on to be compared
- * s       int       working set size
- * tep     bool[]    this array represents the second chance for the Clock Alg
- *********************************************/ 
+
 bool ClockSearch(int ar[], int page, int s, bool tep[])
   {
     for(int i = 0; i < s; i++)   //for loop to find a page and set offset to t                                 //true 
@@ -215,18 +158,7 @@ bool ClockSearch(int ar[], int page, int s, bool tep[])
 
     return false;                //return false if it was not found 
   }
-/****************************************
- *int ClockUpdate(int ar[], int po, int page, int s, bool tep[])
- *Author: Marco Delgado
- *Date: 19 November 2021
- *Description: this method tool is used by Clock to replace and updating the array that hold the page numbers to detect page faults
- *parameters:
- * ar      int[]       array that holds some page numbers
- * po      int         pointer to the arrays
- * page    int         current page number being worked on
- * s       int         working set size
- * tep     bool[]      this array represents the second chance for the Clock Alg
- ****************************************/      
+    
 int ClockUpdate(int ar[], int po, int page, int s, bool tep[])
 {
   int val = 0;                       //variable to help the replacement of pag                                     //e number and pointer
